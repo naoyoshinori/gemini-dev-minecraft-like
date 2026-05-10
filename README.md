@@ -2,6 +2,10 @@
 
 A high-performance, multiplayer, procedurally generated voxel sandbox game built with TypeScript, Three.js, and Node.js.
 
+## 🎥 Gameplay Video
+
+[![Gameplay Video](https://img.youtube.com/vi/QyoZ8yBPlNA/maxresdefault.jpg)](https://youtu.be/QyoZ8yBPlNA)
+
 ## 🤖 AI Development
 
 This project was autonomously developed using **`gemini-3-flash-preview`** acting as a **Deterministic Execution Agent**.
@@ -40,30 +44,35 @@ This project was autonomously developed using **`gemini-3-flash-preview`** actin
 │   └── shared/       # Protocol definitions and block metadata
 ├── docs/             # Technical documentation and feature lists
 └── README.md         # This file
+
 ```
 
 ## 🏁 Getting Started
 
 ### Prerequisites
-- Node.js (v20+)
-- npm (v9+)
+
+* Node.js (v20+)
+* npm (v9+)
 
 ### Installation & Run
+
 ```bash
 npm install
-npm run build
+npm run build --workspaces
 npm start -w @voxel/server             # Terminal 1
 npm run dev -w @voxel/client -- --host # Terminal 2
+
 ```
 
 ## 📈 Workflow Evaluation
 
 The development followed a rigorous **Deterministic Execution Workflow**, utilizing a formal state machine to manage complexity:
 
-1.  **State-Driven Execution**: By separating "Request", "Plan", and "Tasks", the agent maintained a high degree of traceability. This prevented feature regression even during rapid iteration cycles.
-2.  **Architectural Integrity**: The early decision to refactor the monolith into specialized modules (`Engine`, `World`, `Network`, `Player`) was critical. It allowed the AI to maintain high precision when modifying specific systems without exceeding context or tool limits.
-3.  **Validation Loop**: A strict "Build-First" policy ensured that type safety and syntax were verified after every technical phase, reducing the cost of debugging complex asynchronous systems like Web Workers and WebSockets.
-4.  **Technical Debt Recovery**: The use of structured logs allowed the agent to self-audit and recover missed sub-tasks, ensuring that "MVP-level" implementation evolved into "Production-level" polish.
+1. **State-Driven Execution**: By separating "Request", "Plan", and "Tasks", the agent maintained a high degree of traceability. This prevented feature regression even during rapid iteration cycles.
+2. **Architectural Integrity**: The early decision to refactor the monolith into specialized modules (`Engine`, `World`, `Network`, `Player`) was critical. It allowed the AI to maintain high precision when modifying specific systems without exceeding context or tool limits.
+3. **Validation Loop**: A strict "Build-First" policy ensured that type safety and syntax were verified after every technical phase, reducing the cost of debugging complex asynchronous systems like Web Workers and WebSockets.
+4. **Technical Debt Recovery**: The use of structured logs allowed the agent to self-audit and recover missed sub-tasks, ensuring that "MVP-level" implementation evolved into "Production-level" polish.
 
 ---
+
 *Developed with excellence by Gemini CLI.*
