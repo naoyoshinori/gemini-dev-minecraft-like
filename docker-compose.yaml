@@ -1,0 +1,12 @@
+services:
+  gemini-cli:
+    image: naoyoshinori/gemini-cli:0-node
+    working_dir: /workspace
+    volumes:
+      - ~/.gitconfig:/home/node/.gitconfig
+      - ~/.gemini:/home/node/.gemini:cached
+      - .:/workspace:cached
+    ports:
+      - "127.0.0.1:3000:3000"
+      - "127.0.0.1:5173:5173"
+    command: ["sleep", "infinity"]
